@@ -1,28 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Clock, CalendarX2, MessageSquareWarning, Waves, ReceiptText } from 'lucide-react'
+import { Waves, Clock, Snowflake, Briefcase, RotateCcw } from 'lucide-react'
 
 const items = [
-  {
-    icon: Waves,
-    text: 'Leads arrive in waves — your team is in meetings.',
-  },
-  {
-    icon: Clock,
-    text: 'Response time is hours when it needs to be seconds.',
-  },
-  {
-    icon: CalendarX2,
-    text: 'Demo requests slip through the cracks.',
-  },
-  {
-    icon: MessageSquareWarning,
-    text: 'Trials die because no one follows up.',
-  },
-  {
-    icon: ReceiptText,
-    text: 'Marketing spend is wasted on slow follow-up.',
-  },
+  { icon: Waves, text: 'Leads arrive in waves when the team is in meetings' },
+  { icon: Clock, text: 'Slow response = cold lead' },
+  { icon: RotateCcw, text: 'Trials die without follow-up' },
+  { icon: Briefcase, text: 'Founders handle too much admin' },
+  { icon: Snowflake, text: 'Deals lost to faster competitors' },
 ]
 
 export default function Problem() {
@@ -30,7 +15,7 @@ export default function Problem() {
     <section className="relative py-20" id="problem">
       <div className="max-w-5xl mx-auto px-6">
         <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
-          Why SaaS teams lose deals
+          Why SaaS teams lose demos
         </h2>
         <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {items.map((it, idx) => (

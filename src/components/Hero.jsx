@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { CalendarCheck2, ArrowRight, Mail, Filter, Calendar } from 'lucide-react'
+import { CalendarCheck2, ArrowRight, Mail, Filter, Sparkles } from 'lucide-react'
 import Spline from '@splinetool/react-spline'
 
 const LeadMiniFlow = () => {
@@ -9,14 +9,17 @@ const LeadMiniFlow = () => {
     visible: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.12, duration: 0.5, ease: [0.22, 1, 0.36, 1] } })
   }
 
+  const steps = [
+    { Icon: Mail, label: 'Lead' },
+    { Icon: Filter, label: 'Qualification' },
+    { Icon: Sparkles, label: 'Instant Reply' },
+    { Icon: CalendarCheck2, label: 'Demo Booked' },
+  ]
+
   return (
-    <div className="mt-10 w-full max-w-xl mx-auto">
-      <div className="grid grid-cols-3 gap-4">
-        {[
-          { Icon: Mail, label: 'Lead enters' },
-          { Icon: Filter, label: 'Qualified' },
-          { Icon: CalendarCheck2, label: 'Demo booked' },
-        ].map((step, i) => (
+    <div className="mt-10 w-full max-w-2xl mx-auto">
+      <div className="grid grid-cols-4 gap-4">
+        {steps.map((step, i) => (
           <motion.div
             key={step.label}
             custom={i}
@@ -27,7 +30,7 @@ const LeadMiniFlow = () => {
           >
             <step.Icon className="w-5 h-5 mx-auto text-white/90" />
             <div className="mt-2 text-xs text-white/80">{step.label}</div>
-            {i < 2 && (
+            {i < steps.length - 1 && (
               <div className="hidden md:block absolute top-1/2 -right-2 translate-x-full -translate-y-1/2">
                 <ArrowRight className="w-4 h-4 text-white/50" />
               </div>
@@ -65,14 +68,14 @@ export default function Hero() {
             Stop losing inbound leads.
           </h1>
           <p className="mt-5 text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
-            AI-powered lead engine that qualifies every incoming request and books demos in under 30 seconds.
+            We automate qualification + first response and book demos within 30 seconds.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#how" className="inline-flex items-center justify-center rounded-lg bg-white text-slate-900 px-5 py-3 font-medium shadow/20 shadow-black/30 hover:shadow-black/40 hover:shadow-lg transition">
-              See how it works
+            <a href="#book" className="inline-flex items-center justify-center rounded-lg bg-white text-slate-900 px-5 py-3 font-medium shadow/20 shadow-black/30 hover:shadow-black/40 hover:shadow-lg transition">
+              Book a 10-min intro
             </a>
-            <a href="#book" className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white px-5 py-3 font-medium hover:bg-white/10 transition">
-              Book a 10 min intro call
+            <a href="#how" className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white px-5 py-3 font-medium hover:bg-white/10 transition">
+              See live example
             </a>
           </div>
         </motion.div>
