@@ -7,6 +7,7 @@ import Results from './components/Results'
 import Pricing from './components/Pricing'
 import SocialProof from './components/SocialProof'
 import FinalCTA from './components/FinalCTA'
+import Contact from './components/Contact'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <a href="#solution" className="hover:text-white transition">Solution</a>
             <a href="#how" className="hover:text-white transition">How it works</a>
             <a href="#pricing" className="hover:text-white transition">Pricing</a>
+            <a href="#contact" className="hover:text-white transition">Contact</a>
           </nav>
           <a href="#book" className="inline-flex items-center justify-center rounded-md bg-white text-slate-900 px-3 py-1.5 text-sm font-medium">Book intro</a>
         </div>
@@ -36,6 +38,7 @@ function App() {
         <Results />
         <Pricing />
         <SocialProof />
+        <Contact />
         <FinalCTA />
       </main>
 
